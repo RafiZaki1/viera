@@ -36,3 +36,28 @@ body {
 .animate-viera-pulse {
   animation: viera-pulse 1.2s ease-in-out infinite;
 }
+
+/* Tata letak cetak ramah printer dan PDF */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  header,
+  footer,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  article,
+  section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+  }
+
+  main {
+    padding: 0 !important;
+  }
+}
