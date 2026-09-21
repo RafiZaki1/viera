@@ -1,0 +1,402 @@
+{
+  "q1": {
+    "key": "B",
+    "explanation": "Pria di kiri memakai jas. \"One of the men is wearing a jacket.\""
+  },
+  "q2": {
+    "key": "A",
+    "explanation": "\"The walls are decorated with some paintings.\""
+  },
+  "q3": {
+    "key": "B",
+    "explanation": "\"A man is standing next to a bus.\""
+  },
+  "q4": {
+    "key": "B",
+    "explanation": "\"Would you like a drink while waiting?\" → \"Yes, please. Thanks.\""
+  },
+  "q5": {
+    "key": "C",
+    "explanation": "\"Where will the seminar be held…?\" → \"In Tokyo, Japan.\""
+  },
+  "q6": {
+    "key": "C",
+    "explanation": "\"Who did you call at the headquarters…?\" → \"His name is Mac.\""
+  },
+  "q7": {
+    "key": "A",
+    "explanation": "\"When is the director ready to visit…?\" → \"Please contact his assistant.\""
+  },
+  "q8": {
+    "key": "C",
+    "explanation": "\"Who's taking care of the hospitality desk?\" → \"(It's) Mike's shift today.\""
+  },
+  "q9": {
+    "key": "B",
+    "explanation": "\"Isn't the factory still open?\" → \"Yes, but it'll be closed soon.\""
+  },
+  "q10": {
+    "key": "C",
+    "explanation": "\"The heater in my office is extremely deafening.\" → \"Ask the technician to check it out.\""
+  },
+  "q11": {
+    "key": "C",
+    "explanation": "\"How do I register for the show?\" → \"Just check its website.\""
+  },
+  "q12": {
+    "key": "B",
+    "explanation": "\"I can help you with a list of fun activities…\" → \"Great, that'll be very useful.\""
+  },
+  "q13": {
+    "key": "B",
+    "explanation": "\"You started installing the new antivirus…, right?\" → \"Yes, 2 more computers to go.\""
+  },
+  "q14": {
+    "key": "B",
+    "explanation": "\"Could you buy me some paper towels…?\" → \"Sure, I'd be glad to.\""
+  },
+  "q15": {
+    "key": "C",
+    "explanation": "\"You received application forms…, didn't you?\" → \"No, not until now.\""
+  },
+  "q16": {
+    "key": "B",
+    "explanation": "\"…sit here for a while or go to the meeting room now?\" → \"How long is it before the presentation?\""
+  },
+  "q17": {
+    "key": "C",
+    "explanation": "\"I believe his presentation… went smoothly.\" → \"I wasn't sure about it.\""
+  },
+  "q18": {
+    "key": "C",
+    "explanation": "Seluruh percakapan membahas bubuk minuman cokelat (dark, milk, white, spicy mix). Alternatif: A (spicy mix hanya salah satu produk)."
+  },
+  "q19": {
+    "key": "D",
+    "explanation": "Wanita bertanya \"What do you have here?\" dan minta saran → variasi produk."
+  },
+  "q20": {
+    "key": "B",
+    "explanation": "\"Okay, please write your address here.\""
+  },
+  "q21": {
+    "key": "B",
+    "explanation": "Sopir Ms. Santoro sakit, pria diminta menjemput → menggantikan rekan kerja."
+  },
+  "q22": {
+    "key": "A",
+    "explanation": "\"Please tell me how to get to the airport fast and safe.\""
+  },
+  "q23": {
+    "key": "A",
+    "explanation": "Ia akan menjemput tamu di bandara."
+  },
+  "q24": {
+    "key": "C",
+    "explanation": "Mendesain menu dan iklan untuk restoran; \"good eye for Gen Z's style at advertisement\"."
+  },
+  "q25": {
+    "key": "D",
+    "explanation": "Pandai mengenali selera Gen Z."
+  },
+  "q26": {
+    "key": "A",
+    "explanation": "\"Would it be good for you if I discuss it with your supervisor…?\""
+  },
+  "q27": {
+    "key": "A",
+    "explanation": "\"An Indonesian cultural festival in Betsy Hotel ballroom.\""
+  },
+  "q28": {
+    "key": "B",
+    "explanation": "9 orang + Jack = 10 → harga *Group of ten* $22.50."
+  },
+  "q29": {
+    "key": "A",
+    "explanation": "\"I can contact her (Sab) and let her know that you'll join.\""
+  },
+  "q30": {
+    "key": "C",
+    "explanation": "\"I can't get into it (shared drive) at all.\""
+  },
+  "q31": {
+    "key": "A",
+    "explanation": "Yang ada hanya *June Monthly Report* → pemilik Donald Harris."
+  },
+  "q32": {
+    "key": "A",
+    "explanation": "\"Could you please print it out?\""
+  },
+  "q33": {
+    "key": "C",
+    "explanation": "\"Switching to our accounting firm.\""
+  },
+  "q34": {
+    "key": "B",
+    "explanation": "Selasa 10 AM di Room 304 (dipesan Joe) → *Logistic Dept. Meeting*."
+  },
+  "q35": {
+    "key": "D",
+    "explanation": "\"I'll call him and see if he's okay with the swap.\""
+  },
+  "q36": {
+    "key": "A",
+    "explanation": "Webinar \"teaching grammar in a fun way\" → pendengarnya guru."
+  },
+  "q37": {
+    "key": "C",
+    "explanation": "*Thumbs-up* = menunjukkan suka pada pertanyaan."
+  },
+  "q38": {
+    "key": "C",
+    "explanation": "\"A link to the video and any resources… will be emailed to you.\""
+  },
+  "q39": {
+    "key": "C",
+    "explanation": "\"The recent demand increase in production.\""
+  },
+  "q40": {
+    "key": "A",
+    "explanation": "\"We'll be upgrading some machinery… and some software.\""
+  },
+  "q41": {
+    "key": "C",
+    "explanation": "\"If you have any questions about it, please raise your hands.\" (file `41.mp3` tidak ada)"
+  },
+  "q42": {
+    "key": "C",
+    "explanation": "Pengumuman perayaan ulang tahun emas Radio JMG (bazar makanan + musik). Alternatif: D (bazar hanya bagian acara)."
+  },
+  "q43": {
+    "key": "A",
+    "explanation": "\"You can enjoy the music till 10 p.m.\""
+  },
+  "q44": {
+    "key": "B",
+    "explanation": "\"Mark your calendar. Come and celebrate with us on June 14th.\" Alternatif: A."
+  },
+  "q45": {
+    "key": "C",
+    "explanation": "\"Before we dive into this year's sales results…\" Alternatif: B."
+  },
+  "q46": {
+    "key": "D",
+    "explanation": "\"When I built the business 2 years ago…\""
+  },
+  "q47": {
+    "key": "C",
+    "explanation": "Untuk menyamai Zana, fitur di tabel yang belum dimiliki Trust Andrea adalah *Prices*."
+  },
+  "q48": {
+    "key": "A",
+    "explanation": "\"Welcome to the new employees in this training session…\""
+  },
+  "q49": {
+    "key": "B",
+    "explanation": "\"Except the building in front of the main office\" → pintu Building B berhadapan dengan Main Office."
+  },
+  "q50": {
+    "key": "B",
+    "explanation": "\"A business class… improving home industries.\""
+  },
+  "q51": {
+    "key": "D",
+    "explanation": "*have decided to build*"
+  },
+  "q52": {
+    "key": "A",
+    "explanation": "Adverb *periodically* menerangkan *hold*."
+  },
+  "q53": {
+    "key": "C",
+    "explanation": "*digital training program*"
+  },
+  "q54": {
+    "key": "C",
+    "explanation": "Kata ganti relatif subjek: *those who battle…*"
+  },
+  "q55": {
+    "key": "B",
+    "explanation": "*participants in the meeting*"
+  },
+  "q56": {
+    "key": "D",
+    "explanation": "*limit ads and increase interactive games*"
+  },
+  "q57": {
+    "key": "C",
+    "explanation": "*learn local traditions directly*"
+  },
+  "q58": {
+    "key": "C",
+    "explanation": "Mengumpulkan *after the deadlines* → bonus hilang."
+  },
+  "q59": {
+    "key": "D",
+    "explanation": "*reports concerning the storms*"
+  },
+  "q60": {
+    "key": "B",
+    "explanation": "Adverb *certainly* sebelum adjektiva *full*."
+  },
+  "q61": {
+    "key": "D",
+    "explanation": "*great food, excellent service*"
+  },
+  "q62": {
+    "key": "B",
+    "explanation": "*Over the years* → present perfect *have delighted*."
+  },
+  "q63": {
+    "key": "D",
+    "explanation": "Kalimat berikutnya: \"You'll get the chance to watch a live cooking demonstration.\""
+  },
+  "q64": {
+    "key": "C",
+    "explanation": "*look forward to + V-ing* → *celebrating*."
+  },
+  "q65": {
+    "key": "B",
+    "explanation": "Isi proposal dinyatakan dengan present simple *includes*."
+  },
+  "q66": {
+    "key": "A",
+    "explanation": "*a remarkable step forward*"
+  },
+  "q67": {
+    "key": "C",
+    "explanation": "Sejalan dengan \"take at least three years… unforeseen challenges might cause interruptions\"."
+  },
+  "q68": {
+    "key": "A",
+    "explanation": "*stick to the schedule*"
+  },
+  "q69": {
+    "key": "A",
+    "explanation": "Ditujukan \"To all JMG Accounting Employees\"."
+  },
+  "q70": {
+    "key": "D",
+    "explanation": "\"Join us this Friday… celebrate her great career… retirement\" → acara perpisahan."
+  },
+  "q71": {
+    "key": "D",
+    "explanation": "\"Starting next month, the newsletter will be sent by email.\""
+  },
+  "q72": {
+    "key": "C",
+    "explanation": "Pastikan email sudah terdaftar, bisa lewat website."
+  },
+  "q73": {
+    "key": "A",
+    "explanation": "Kafe diambil alih PDG → \"the new management\"."
+  },
+  "q74": {
+    "key": "D",
+    "explanation": "\"It was a tough choice\". keputusan melepas kafe."
+  },
+  "q75": {
+    "key": "A",
+    "explanation": "Posisi [1] langsung diikuti \"However, we will keep the original espresso bar\"."
+  },
+  "q76": {
+    "key": "C",
+    "explanation": "\"Main venue for the Lemon Street Festival.\""
+  },
+  "q77": {
+    "key": "D",
+    "explanation": "\"Take only incoming calls from clients.\""
+  },
+  "q78": {
+    "key": "B",
+    "explanation": "\"After completing the course, you can be qualified for a full-time role with a fixed salary.\""
+  },
+  "q79": {
+    "key": "A",
+    "explanation": "\"Learn more about us by visiting BrightwayTelecom.com.\""
+  },
+  "q80": {
+    "key": "C",
+    "explanation": "Artikel profil pencapaian Ron Shaw & galerinya (ulang tahun ke-50)."
+  },
+  "q81": {
+    "key": "B",
+    "explanation": "25 tahun adalah masa mengajar di Oakridge College, bukan lama tinggal di Oakridge."
+  },
+  "q82": {
+    "key": "C",
+    "explanation": "*didn't foresee it lasting this long* → *expect*."
+  },
+  "q83": {
+    "key": "A",
+    "explanation": "\"This does not mean that The Artisan's Nook will change its operating hours.\""
+  },
+  "q84": {
+    "key": "A",
+    "explanation": "Menerima invoice dan akan membayar pesanan → pelanggan."
+  },
+  "q85": {
+    "key": "D",
+    "explanation": "Menjawab \"Let me know if you need any further details\"."
+  },
+  "q86": {
+    "key": "A",
+    "explanation": "\"Excited to invite you to join our remote teaching team.\""
+  },
+  "q87": {
+    "key": "B",
+    "explanation": "\"Let us know your availability for the week of June 6\" (onboarding)."
+  },
+  "q88": {
+    "key": "C",
+    "explanation": "Tim IEF (Indonesian-English-French) mengajar bahasa yang sama. Pilihan A memakai kata *remote* dengan arti berbeda."
+  },
+  "q89": {
+    "key": "B",
+    "explanation": "HR akan menghubungi untuk dokumen onboarding."
+  },
+  "q90": {
+    "key": "D",
+    "explanation": "Onboarding virtual 7 Juni pukul 10.00-13.30."
+  },
+  "q91": {
+    "key": "C",
+    "explanation": "Simposium *Cocoa Farming and Production* (sesi-sesi tentang cokelat)."
+  },
+  "q92": {
+    "key": "C",
+    "explanation": "\"All presenters MUST sign in… check the 'Presenter' checkbox.\""
+  },
+  "q93": {
+    "key": "A",
+    "explanation": "\"Asked to replace Jorge Alvarez.\""
+  },
+  "q94": {
+    "key": "A",
+    "explanation": "*engage in a lively discussion* → *involve*."
+  },
+  "q95": {
+    "key": "D",
+    "explanation": "\"Network with like-minded professionals.\" Alternatif: B (\"looking forward to contributing again next year\")."
+  },
+  "q96": {
+    "key": "C",
+    "explanation": "\"A public meeting will be held at the Jackville Civic Hall on Monday.\""
+  },
+  "q97": {
+    "key": "C",
+    "explanation": "Tidak ada informasi Ms. Rivera pernah menjadi rekan Ms. Clark."
+  },
+  "q98": {
+    "key": "B",
+    "explanation": "*community advocacy* → dukungan (*backing*)."
+  },
+  "q99": {
+    "key": "B",
+    "explanation": "\"Bravo!… This success is a proof of the power of community advocacy.\""
+  },
+  "q100": {
+    "key": "D",
+    "explanation": "Dukungan \"at the public meeting\" yang diadakan di Civic Hall."
+  }
+}

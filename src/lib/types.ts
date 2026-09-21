@@ -21,10 +21,28 @@ export type QuestionItem = {
 
 export type ExamItem = DirectionItem | QuestionItem;
 
-/** Jawaban peserta: id soal → huruf pilihan. */
+/** Jawaban peserta: id soal -> huruf pilihan. */
 export type Answers = Record<string, Letter>;
 
 export type Score = { correct: number; total: number };
+
+export type ToeicResult = {
+  listeningScore: number;
+  readingScore: number;
+  totalScore: number;
+  level: string;
+  description: string;
+};
+
+export type DiagnosticItem = {
+  part: number;
+  label: string;
+  accuracy: number;
+  correct: number;
+  total: number;
+  status: "strong" | "moderate" | "weak";
+  recommendation: string;
+};
 
 export type ResultDetail = {
   id: string;
@@ -33,6 +51,12 @@ export type ResultDetail = {
   answer: Letter | null;
   key: Letter;
   correct: boolean;
+  question?: string;
+  options?: string[];
+  image?: string;
+  groupImage?: string;
+  audio?: string;
+  explanation?: string;
 };
 
 export type ExamResult = {
@@ -42,6 +66,8 @@ export type ExamResult = {
   reading: Score;
   parts: ({ part: number } & Score)[];
   details: ResultDetail[];
+  toeic?: ToeicResult;
+  diagnostics?: DiagnosticItem[];
 };
 
 export type Participant = {
