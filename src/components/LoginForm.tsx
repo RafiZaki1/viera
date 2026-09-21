@@ -7,7 +7,9 @@ import {
   checkSession,
   clearNotice,
   createExamStore,
-  getParticipant,
+  forgetLastParticipant,
+  generateCode,
+  getLastParticipant,
   login,
   logout,
   peekNotice,
@@ -18,11 +20,12 @@ import { Button } from "./ui";
 export default function LoginForm() {
   const router = useRouter();
   const [notice] = useState(() => peekNotice());
+  // Sesi aktif, atau peserta terakhir di perangkat ini (bila tab sempat ditutup).
   const [current, setCurrent] = useState<Participant | null>(() => {
     const session = checkSession();
-    return session.ok ? session.participant : null;
+    return session.ok ? session.participant : getLastParticipant();
   });
-  const [code, setCode] = useState("");
+  const [code, setCode] = useState(() => generateCode());
   const [name, setName] = useState("");
   const [error, setError] = useState<string | null>(null);
 
@@ -32,31 +35,19 @@ export default function LoginForm() {
   }, []);
 
   const enter = (participant: Participant) => {
+    login(participant.std_code, participant.std_name);
     const submitted = createExamStore(participant.std_code).get("result");
     router.push(submitted ? "/result" : "/test");
   };
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const stdCode = code.trim().toUpperCase();
     const stdName = name.trim().replace(/\s+/g, " ");
-
-    if (!/^[A-Z0-9._-]{3,30}$/.test(stdCode)) {
-      setError("Nomor peserta minimal 3 karakter (huruf, angka, titik, atau tanda hubung).");
-      return;
-    }
     if (stdName.length < 3) {
       setError("Nama lengkap minimal 3 karakter.");
       return;
     }
-    const existing = getParticipant(stdCode);
-    if (existing && existing.std_name.toLowerCase() !== stdName.toLowerCase()) {
-      setError("Nomor peserta ini sudah dipakai dengan nama lain di perangkat ini.");
-      return;
-    }
-
-    login(stdCode, stdName);
-    enter({ std_code: stdCode, std_name: stdName });
+    enter({ std_code: code, std_name: stdName });
   };
 
   return (
@@ -86,29 +77,32 @@ export default function LoginForm() {
               className="w-full"
               onClick={() => {
                 logout();
+                forgetLastParticipant();
+                setCode(generateCode());
                 setCurrent(null);
               }}
             >
-              Ganti peserta
+              Peserta baru
             </Button>
           </div>
         ) : (
           <form onSubmit={onSubmit} className="mt-6 space-y-4" noValidate>
             <div>
-              <label htmlFor="std_code" className="mb-1 block text-sm font-semibold text-slate-700">
-                Nomor Peserta
-              </label>
-              <input
-                id="std_code"
-                name="std_code"
-                value={code}
-                onChange={(e) => setCode(e.target.value)}
-                autoComplete="off"
-                autoCapitalize="characters"
-                placeholder="Contoh: VIERA-001"
-                className="w-full rounded-md border border-slate-300 px-3 py-2.5 uppercase outline-none placeholder:normal-case focus:border-exam-active focus:ring-2 focus:ring-sky-200"
-                required
-              />
+              <p className="mb-1 text-sm font-semibold text-slate-700">Nomor Peserta</p>
+              <div className="flex items-center gap-2">
+                <output
+                  aria-label="Nomor peserta"
+                  className="flex-1 rounded-md border border-slate-200 bg-slate-50 px-3 py-2.5 font-mono text-lg font-bold tracking-wider text-brand"
+                >
+                  {code}
+                </output>
+                <Button onClick={() => setCode(generateCode())} title="Buat nomor baru">
+                  ↻ Acak
+                </Button>
+              </div>
+              <p className="mt-1 text-xs text-slate-500">
+                Dibuat otomatis. Jika halaman tertutup, tes bisa dilanjutkan dari perangkat ini.
+              </p>
             </div>
             <div>
               <label htmlFor="std_name" className="mb-1 block text-sm font-semibold text-slate-700">
@@ -118,8 +112,12 @@ export default function LoginForm() {
                 id="std_name"
                 name="std_name"
                 value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => {
+                  setName(e.target.value);
+                  setError(null);
+                }}
                 autoComplete="name"
+                autoFocus
                 placeholder="Nama sesuai data peserta"
                 className="w-full rounded-md border border-slate-300 px-3 py-2.5 outline-none focus:border-exam-active focus:ring-2 focus:ring-sky-200"
                 required
@@ -138,10 +136,6 @@ export default function LoginForm() {
           </form>
         )}
       </div>
-
-      <p className="mt-4 text-center text-xs text-slate-500">
-        Gunakan nomor peserta yang sama untuk melanjutkan tes yang terhenti.
-      </p>
     </div>
   );
 }

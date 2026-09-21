@@ -22,7 +22,7 @@ Penilaian dilakukan lewat Server Action, jadi aplikasi harus dijalankan dengan `
 
 ## Alur tes
 
-1. **Masuk** (`/`) — nomor peserta + nama. Disimpan seperti di script.js:
+1. **Masuk** (`/`) — peserta cukup mengisi nama; nomor peserta dibuat acak otomatis (`VIERA-XXXXXX`). Disimpan seperti di script.js:
    `sessionStorage.std_code` dan `localStorage["vieraData::<kode>"]`.
 2. **Tes** (`/test`)
    - Petunjuk umum → *Listening Test* → direction Part 1–4.

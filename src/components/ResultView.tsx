@@ -3,7 +3,13 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { formatTime, PART_LABELS } from "@/lib/config";
-import { checkSession, createExamStore, logout, setNotice } from "@/lib/storage";
+import {
+  checkSession,
+  createExamStore,
+  forgetLastParticipant,
+  logout,
+  setNotice,
+} from "@/lib/storage";
 import type { Participant, ResultDetail, Score, StoredResult } from "@/lib/types";
 import { Button, cn, LoadingScreen } from "./ui";
 
@@ -41,6 +47,7 @@ function Result({ participant, result }: { participant: Participant; result: Sto
 
   const signOut = () => {
     logout();
+    forgetLastParticipant();
     router.replace("/");
   };
 

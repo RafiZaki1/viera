@@ -7,6 +7,9 @@ import type { Participant } from "./types";
 
 const SESSION_KEY = "std_code";
 const NOTICE_KEY = "viera_notice";
+const LAST_CODE_KEY = "viera_last_code";
+// Tanpa huruf/angka yang mirip (0/O, 1/I/L) agar mudah dicatat.
+const CODE_ALPHABET = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
 const participantKey = (code: string) => `vieraData::${code}`;
 
 function safe<T>(fn: () => T, fallback: T): T {
@@ -51,7 +54,28 @@ export function login(code: string, name: string) {
     participantKey(code),
     JSON.stringify({ std_code: code, std_name: name }),
   );
+  localStorage.setItem(LAST_CODE_KEY, code);
   sessionStorage.setItem(SESSION_KEY, code);
+}
+
+/** Nomor peserta acak, mis. "VIERA-7KQ2MX", yang belum dipakai di perangkat ini. */
+export function generateCode(): string {
+  for (;;) {
+    const bytes = crypto.getRandomValues(new Uint8Array(6));
+    const suffix = Array.from(bytes, (b) => CODE_ALPHABET[b % CODE_ALPHABET.length]).join("");
+    const code = `VIERA-${suffix}`;
+    if (!getParticipant(code)) return code;
+  }
+}
+
+/** Peserta terakhir yang masuk di perangkat ini (untuk melanjutkan setelah tab ditutup). */
+export function getLastParticipant(): Participant | null {
+  const code = safe(() => localStorage.getItem(LAST_CODE_KEY), null);
+  return code ? getParticipant(code) : null;
+}
+
+export function forgetLastParticipant() {
+  safe(() => localStorage.removeItem(LAST_CODE_KEY), undefined);
 }
 
 export function logout() {
