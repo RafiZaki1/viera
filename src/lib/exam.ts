@@ -1,6 +1,8 @@
 import "server-only";
 
+import explanations from "@/data/explanations.json";
 import raw from "@/data/test.json";
+import { calculateToeicScore, generateDiagnostics } from "./toeic";
 import {
   LETTERS,
   type Answers,
@@ -45,7 +47,7 @@ const questionById = new Map(questions.map((q) => [q.id, q]));
 
 /**
  * Urutan item tes (direction + soal) untuk dikirim ke browser.
- * Kunci jawaban sengaja tidak ikut — penilaian dilakukan di server.
+ * Kunci jawaban sengaja tidak ikut, penilaian dilakukan di server.
  */
 export function getExamItems(): ExamItem[] {
   return (raw as RawItem[]).map((it): ExamItem => {
@@ -78,8 +80,11 @@ function sanitize(input: unknown): Answers {
 
 export function gradeAnswers(input: unknown): ExamResult {
   const answers = sanitize(input);
+  const explanationMap = explanations as Record<string, { key: string; explanation: string }>;
+
   const details = questions.map((q) => {
     const answer = answers[q.id] ?? null;
+    const exp = explanationMap[q.id];
     return {
       id: q.id,
       number: q.number,
@@ -87,6 +92,12 @@ export function gradeAnswers(input: unknown): ExamResult {
       answer,
       key: q.answer,
       correct: answer === q.answer,
+      question: q.question,
+      options: q.options,
+      image: q.image,
+      groupImage: q.groupImage,
+      audio: q.audio,
+      explanation: exp?.explanation ?? "",
     };
   });
 
@@ -96,14 +107,23 @@ export function gradeAnswers(input: unknown): ExamResult {
   });
   const partNumbers = [...new Set(details.map((d) => d.part))];
 
+  const listeningScore = tally(details.filter((d) => d.part <= 4));
+  const readingScore = tally(details.filter((d) => d.part >= 5));
+  const parts = partNumbers.map((part) => ({
+    part,
+    ...tally(details.filter((d) => d.part === part)),
+  }));
+
+  const toeic = calculateToeicScore(listeningScore.correct, readingScore.correct);
+  const diagnostics = generateDiagnostics(parts);
+
   return {
     ...tally(details),
-    listening: tally(details.filter((d) => d.part <= 4)),
-    reading: tally(details.filter((d) => d.part >= 5)),
-    parts: partNumbers.map((part) => ({
-      part,
-      ...tally(details.filter((d) => d.part === part)),
-    })),
+    listening: listeningScore,
+    reading: readingScore,
+    parts,
     details,
+    toeic,
+    diagnostics,
   };
 }
